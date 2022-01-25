@@ -31,9 +31,9 @@ class Person {
     }
 }
 
-const Daniel = new Person("Daniel", "Front-end developer")
+const daniel = new Person("Daniel", "Front-end developer")
 
-Daniel.fetchjob()
+daniel.fetchjob()
 
 class Programmer extends Person {
     constructor(name, job, age, languages) {
@@ -55,16 +55,32 @@ class Programmer extends Person {
             console.log(`${this.name} would love to take on a new responsibility.`)
         }
     }
-    learnLanguage() {
-
+    learnLanguage(lang) {
+        this.languages.push(lang)
     }
     listLanguages() {
-
+        console.log(this.languages)
+    }
+    showInfo() {
+        console.log(`${this.name} is a ${this.job} who is ${this.age} that can write ${this.languages}`)
     }
 }
  
 
-const Alan = new Programmer("Alan")
-Alan.acceptNewTask()
-Alan.completeTask()
-Alan.offerNewTask()
+const john = new Programmer("john", "Front-end developer", 21, ["HTML", "CSS", "Java"])
+const cesar = new Programmer("cesar", "back-end developer", 25, ["Ruby", "React", "JavaScript"])
+const alan = new Programmer("Alan", "Front-end developer", 23, ["HTML", "CSS", "C++"])
+
+
+alan.acceptNewTask()
+alan.completeTask()
+alan.offerNewTask()
+
+
+alan.learnLanguage("Golang")
+cesar.learnLanguage("Pyton")
+john.learnLanguage("Rust")
+
+alan.showInfo()
+cesar.showInfo()
+john.showInfo()
