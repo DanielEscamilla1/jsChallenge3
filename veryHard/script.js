@@ -36,29 +36,35 @@ const Daniel = new Person("Daniel", "Front-end developer")
 Daniel.fetchjob()
 
 class Programmer extends Person {
-    constructor(name, job, age, languages, busy) {
+    constructor(name, job, age, languages) {
         super(name, job, age)
         this.languages = languages;
         this.busy = true;
     }
 
     completeTask() {
-            this.busy = false;
-            console.log(`${this.name} is ${this.busy}`)
-        }
-     acceptNewTask() {
+        this.busy = false;
+    }
+    acceptNewTask() {
         this.busy = true;
-        console.log(`${this.name} is not ${this.busy}`)
-        }
+    }
     offerNewTask() {
-        if (this.busy = false) {
+        if (this.busy === true) {
             console.log(`${this.name} can't accept any new tasks right now.`)
         }else {
             console.log(`${this.name} would love to take on a new responsibility.`)
         }
-    }    
     }
+    learnLanguage() {
+
+    }
+    listLanguages() {
+
+    }
+}
+ 
 
 const Alan = new Programmer("Alan")
 Alan.acceptNewTask()
+Alan.completeTask()
 Alan.offerNewTask()
